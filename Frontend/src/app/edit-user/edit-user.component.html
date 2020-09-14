@@ -1,0 +1,23 @@
+<div class="col-md-3">
+  <h2 class="text-center">Editar Usuario</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>nombre completo:</label>
+      <input type="text" formControlName="complete_name" placeholder="complete_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.complete_name.errors }">
+      <div *ngIf="submitted && f.complete_name.errors">
+        <div *ngIf="f.complete_name.errors.required">Nombre compelto requerido</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>funciones:</label>
+      <input type="text" formControlName="funcions" placeholder="funcions" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.funcions.errors }">
+      <div *ngIf="submitted && f.funcions.errors">
+        <div *ngIf="f.funcions.errors.required">funciones requeridas</div>
+      </div>
+    </div>
+
+    <button type="submit"  class="btn btn-info">Update</button>
+  </form>
+</div>
+
